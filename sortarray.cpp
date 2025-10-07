@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int data[] = {8, 4, 1, 9, 3, 7, 2, 6, 5};
+    int n = sizeof(data) / sizeof(data[0]);
+    int temp;
+
+    cout << "Data sebelum diurutkan: ";
+    for (int i = 0; i < n; i++) {
+        cout << data[i] << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (data[j] > data[j + 1]) {
+                temp = data[j];
+                data[j] = data[j + 1];
+                data[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Data setelah diurutkan: ";
+    for (int i = 0; i < n; i++) {
+        cout << data[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
