@@ -1,23 +1,27 @@
-#include <stdio.h>
-#define length(arr) ((int) (sizeof (arr) / sizeof (arr)[0]))
+#include <iostream>
+using namespace std;
 
-int main(){
+int main() {
     int data[3][3];
-    int i,j;
-    int kolom = length(data);
-    int baris = length(data[0]);
+    
+    // Hitung jumlah baris dan kolom tanpa #define
+    int kolom = sizeof(data) / sizeof(data[0]);      // jumlah baris (3)
+    int baris = sizeof(data[0]) / sizeof(data[0][0]); // jumlah kolom (3)
 
-    for(i=0; i < kolom; i++){
-        for(j=0; j < baris; j++){
+    // Isi array
+    for (int i = 0; i < kolom; i++) {
+        for (int j = 0; j < baris; j++) {
             data[i][j] = i * j;
         }
     }
 
-    for(i=0; i < kolom; i++){
-        for(j=0; j < baris; j++){
-            printf("%d ",data[i][j]);
+    // Cetak array
+    for (int i = 0; i < kolom; i++) {
+        for (int j = 0; j < baris; j++) {
+            cout << data[i][j] << " ";
         }
-        printf("\n");
+        cout << endl;
     }
+
+    return 0;
 }
-    

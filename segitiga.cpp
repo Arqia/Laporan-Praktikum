@@ -2,9 +2,25 @@
 using namespace std;
 
 int main() {
-    int n;
+    int n = 1000;
 
-    cout << "Masukkan nilai n = ";
+    for(int i = 1; i <= n; i++){
+        if(i < 10){
+            cout << "00" << i << " ";
+        } else if(i < 100) {
+            cout << "0" << i << " ";
+        } else {
+            cout << i << " ";
+        }
+        if(i % 25 == 0){
+            cout << endl;
+        }
+    }
+
+
+
+
+    /*cout << "Masukkan nilai n = ";
     cin >> n;
 
     for (int i = 1; i <= n; i++) {
@@ -13,6 +29,7 @@ int main() {
         }
         cout << endl;
     }
+    
     cout << endl;
     for (int i = n; i >= 1; i--) {
         for (int j = 1; j <= i; j++) {
@@ -50,7 +67,7 @@ int main() {
         }
         cout << endl;
     }
-
+*/
     return 0;
 }
 
